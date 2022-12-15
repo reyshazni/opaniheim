@@ -78,7 +78,13 @@ def delete_player_info(player_rk: int):
     try:
         result = db_conn.execute(query, {"rk": player_rk})
         if result.rowcount > 0:
-            return
-        return
+            return {
+                "msg": "Fails, Player is not deleted"
+            }, 300
+        return {
+                   "msg": "Success, Player has been deleted"
+               }, 200
     except:
-        return
+        return {
+                   "msg": "Fails, Player is not deleted"
+               }, 300

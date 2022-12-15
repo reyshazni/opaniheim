@@ -2,7 +2,6 @@ import jwt
 from functools import wraps
 from flask import request, abort
 import time
-import os
 
 secret_key = "OpanLov"
 jwt_algo = "HS256"
