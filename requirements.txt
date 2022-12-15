@@ -1,0 +1,6 @@
+pyjwt
+pydantic
+cryptography
+sqlalchemy
+pymysql
+python-dotenv
