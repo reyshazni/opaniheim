@@ -9,7 +9,7 @@ jwt_algo = "HS256"
 def encode_jwt(user_id):
     payload = {
         "user_id": user_id,
-        "expires": time.time() + 600
+        "expires": time.time() + 60000
     }
     token = jwt.encode(payload, secret_key, algorithm=jwt_algo)
     return token

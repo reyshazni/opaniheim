@@ -1,0 +1,33 @@
+from sqlalchemy import text,Table, Column, Integer, String, MetaData, Float
+
+metadata = MetaData()
+players_stats = Table('players_stats', metadata,
+    Column('id', Integer, primary_key=True),
+    Column('Rk', Integer),
+    Column('Player', String(34)),
+    Column('Pos', String(5)),
+    Column('Age', Integer),
+    Column('Tm', String(3)),
+    Column('G', Integer),
+    Column('MP', Integer),
+    Column('PER', Float),
+    Column('TS%', Float),
+    Column('3PAr', Float),
+    Column('FTr', Float),
+    Column('ORB%', Float),
+    Column('DRB%', Float),
+    Column('TRB%', Float),
+    Column('AST%', Float),
+    Column('STL%', Float),
+    Column('BLK%', Float),
+    Column('TOV%', Integer),
+    Column('USG%', Integer),
+    Column('OWS', Float),
+    Column('DWS', Float),
+    Column('WS', Float),
+    Column('WS/48', Float),
+    Column('OBPM', Float),
+    Column('DBPM', Float),
+    Column('BPM', Float),
+    Column('VORP', Float)
+)

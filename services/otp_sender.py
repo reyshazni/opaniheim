@@ -27,10 +27,16 @@ def decode_otp(token: str):
 
 def create_session_from_otp(otp: str):
     decoded = decode_otp(otp)
-    return {
-        "msg": "Session Created",
-        "token": encode_jwt(decoded["user_id"])
-    }
+    token = encode_jwt(decoded["user_id"])
+    try :
+        return {
+            "msg": "Session Created",
+            "token": token
+        }
+    except:
+        return {
+            "msg": "Internal Server Error"
+        }, 500
 
 def send_otp(to_email: str, uid: int):
     msg = MIMEMultipart()
